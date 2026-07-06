@@ -134,3 +134,34 @@ a { color: inherit; }
   cursor: pointer; color: #C9C9D1; flex-shrink: 0; transition: color .15s ease, border-color .15s ease;
 }
 .theme-toggle:hover { color: #fff; border-color: #3A3B40; }
+
+/* ===== Barra superior (marquee) ===== */
+.marquee {
+  background: #E4222E;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  z-index: 41;
+}
+.marquee-track {
+  display: inline-flex;
+  will-change: transform;
+  animation: marquee-scroll 26s linear infinite;
+}
+.marquee-seq { display: inline-flex; }
+.marquee-item {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 0;
+  letter-spacing: .2px;
+}
+.marquee-sep { margin: 0 22px; opacity: .8; }
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+/* respeita quem prefere menos animação */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}

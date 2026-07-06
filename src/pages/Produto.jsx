@@ -73,19 +73,19 @@ export default function Produto() {
         <Link to="/catalogo" style={{ color: theme.textSecondary, fontSize: 13, textDecoration: 'none' }}>← Voltar ao catálogo</Link>
       </Container>
 
-      <Container max={900} style={{ padding: 0, marginTop: 14 }}>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 0 }}>
+      <Container max={900} style={{ padding: '0 20px', marginTop: 14 }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 20 }}>
           {/* Foto principal + galeria */}
           <div style={{ flex: '1 1 300px' }}>
-            <div style={{ background: theme.bgElevated, padding: '40px 20px', display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: 260 }}>
+            <div style={{ background: theme.photoBg, borderRadius: 16, overflow: 'hidden', aspectRatio: '1 / 1', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               {fotos.length > 0 ? (
-                <img src={fotos[fotoAtiva]} alt={produto.name} style={{ maxWidth: '100%', maxHeight: 260, objectFit: 'contain' }} />
+                <img src={fotos[fotoAtiva]} alt={produto.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
               ) : (
-                <TireImage photos={[]} size={170} bg={theme.bgElevated} />
+                <TireImage photos={[]} size={180} bg={theme.photoBg} />
               )}
             </div>
             {fotos.length > 1 && (
-              <div style={{ display: 'flex', gap: 8, padding: '10px 20px', justifyContent: 'center' }}>
+              <div style={{ display: 'flex', gap: 8, padding: '10px 0 0', justifyContent: 'center' }}>
                 {fotos.map((f, i) => (
                   <button
                     key={i}
@@ -104,7 +104,7 @@ export default function Produto() {
           </div>
 
           {/* Infos */}
-          <div style={{ flex: '1 1 320px', padding: '24px 20px' }}>
+          <div style={{ flex: '1 1 320px', padding: '4px 0 24px' }}>
             <div style={{ color: theme.textMuted, fontSize: 12 }}>{produto.category}</div>
             {produto.brand && <div style={{ color: theme.textSecondary, fontSize: 13, marginTop: 4 }}>{produto.brand}</div>}
             <h1 style={{ color: theme.textPrimary, fontSize: 23, fontWeight: 700, marginTop: 2 }}>{produto.name}</h1>

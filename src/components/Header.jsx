@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import Container from './Container'
+import TopBar from './TopBar'
 import logo from '../assets/logo.png'
 import { getTheme, setTheme } from '../lib/themeMode'
 
@@ -32,8 +33,10 @@ export default function Header() {
   }
 
   return (
-    <header style={{ borderBottom: `1px solid ${HBORDER}`, background: HB, position: 'relative', zIndex: 40 }}>
-      <Container style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, height: 84 }}>
+    <>
+      <TopBar />
+      <header style={{ borderBottom: `1px solid ${HBORDER}`, background: HB, position: 'relative', zIndex: 40 }}>
+        <Container style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, height: 84, padding: '0 clamp(20px, 4vw, 40px)' }}>
         <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
           <img src={logo} alt="Vieira Pneus — Recapadora e Acessórios" style={{ height: 64, width: 'auto', display: 'block' }} />
         </Link>
@@ -99,6 +102,7 @@ export default function Header() {
           </Container>
         </nav>
       )}
-    </header>
+      </header>
+    </>
   )
 }

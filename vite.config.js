@@ -11,7 +11,7 @@ export default defineConfig({
       manifest: {
         name: 'Vieira Pneus',
         short_name: 'Vieira Pneus',
-        description: 'Catálogo de pneus — Vieira Pneus, Joinville-SC',
+        description: 'Catálogo de pneus e acessórios — Vieira Pneus, São Bento do Sul-SC',
         theme_color: '#0F1012',
         background_color: '#0F1012',
         display: 'standalone',
