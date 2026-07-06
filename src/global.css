@@ -13,6 +13,11 @@
   --chip: #1C1D21;
   --chip-border: #2A2B30;
   --photo-bg: #141518;
+  --header-bg: #0F1012;
+  --header-border: #202126;
+  --header-text: #C9C9D1;
+  --header-text-strong: #FFFFFF;
+  --header-toggle-border: #2A2B30;
 }
 [data-theme="light"] {
   --bg: #F4F5F7;
@@ -26,6 +31,11 @@
   --chip: #FFFFFF;
   --chip-border: #DDDFE4;
   --photo-bg: #FFFFFF;
+  --header-bg: #FFFFFF;
+  --header-border: #E4E6EA;
+  --header-text: #4A4C54;
+  --header-text-strong: #141518;
+  --header-toggle-border: #D9DBE0;
 }
 
 * {
@@ -113,12 +123,15 @@ a { color: inherit; }
 }
 .cat-card:hover .cat-arrow { color: #E4222E; transform: translate(2px, -2px); }
 
-/* ===== Menu do header (header é sempre escuro) ===== */
+/* ===== Menu do header (acompanha o tema) ===== */
+.header-logo { height: 60px; width: auto; display: block; }
+@media (min-width: 768px) { .header-logo { height: 82px; } }
+
 .nav-link {
-  color: #C9C9D1; font-size: 14px; font-weight: 500; text-decoration: none;
+  color: var(--header-text); font-size: 14px; font-weight: 500; text-decoration: none;
   padding: 8px 2px; transition: color .15s ease;
 }
-.nav-link:hover, .nav-link.ativo { color: #fff; }
+.nav-link:hover, .nav-link.ativo { color: var(--header-text-strong); }
 .nav-link.ativo { border-bottom: 2px solid #E4222E; }
 
 .nav-desktop { display: none; }
@@ -129,11 +142,11 @@ a { color: inherit; }
 }
 
 .theme-toggle {
-  background: transparent; border: 1px solid #2A2B30; border-radius: 9px;
+  background: transparent; border: 1px solid var(--header-toggle-border); border-radius: 9px;
   width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;
-  cursor: pointer; color: #C9C9D1; flex-shrink: 0; transition: color .15s ease, border-color .15s ease;
+  cursor: pointer; color: var(--header-text); flex-shrink: 0; transition: color .15s ease, border-color .15s ease;
 }
-.theme-toggle:hover { color: #fff; border-color: #3A3B40; }
+.theme-toggle:hover { color: var(--header-text-strong); }
 
 /* ===== Barra superior (marquee) ===== */
 .marquee {

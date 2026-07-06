@@ -36,7 +36,7 @@ export default function Home() {
       <section style={{ borderBottom: `1px solid ${theme.divider}` }}>
         <Container style={{ padding: '56px 20px', textAlign: 'center' }}>
           <h1 style={{ color: theme.textPrimary, fontSize: 32, fontWeight: 700, lineHeight: 1.25, maxWidth: 640, margin: '0 auto' }}>
-            Os melhores pneus e acessórios de São Bento do Sul
+            Os melhores pneus e acessórios de <span style={{ whiteSpace: 'nowrap' }}>São Bento do Sul</span>
           </h1>
           <p style={{ color: theme.textSecondary, fontSize: 15, marginTop: 14, lineHeight: 1.6, maxWidth: 480, marginLeft: 'auto', marginRight: 'auto' }}>
             Escolha pela categoria, marca ou medida, confira os detalhes e peça seu orçamento direto no WhatsApp.
