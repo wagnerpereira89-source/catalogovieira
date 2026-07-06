@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* ===== TOKENS DE TEMA ===== */
+:root, [data-theme="dark"] {
+  --bg: #0F1012;
+  --bg-elevated: #141518;
+  --card: #17181B;
+  --card-border: #26272B;
+  --divider: #202126;
+  --text-primary: #F5F5F7;
+  --text-secondary: #9A9AA2;
+  --text-muted: #6B6B72;
+  --chip: #1C1D21;
+  --chip-border: #2A2B30;
+  --photo-bg: #141518;
+}
+[data-theme="light"] {
+  --bg: #F4F5F7;
+  --bg-elevated: #FFFFFF;
+  --card: #FFFFFF;
+  --card-border: #E4E6EA;
+  --divider: #E7E9ED;
+  --text-primary: #1A1B1E;
+  --text-secondary: #5B5E66;
+  --text-muted: #909299;
+  --chip: #FFFFFF;
+  --chip-border: #DDDFE4;
+  --photo-bg: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body, #root { min-height: 100%; }
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background .2s ease, color .2s ease;
+}
+
+a { color: inherit; }
+
+/* ===== Grade de produtos: 2 por linha no mobile, maior no desktop ===== */
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+@media (min-width: 768px) {
+  .produtos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+  }
+}
+
+/* ===== Card de produto ===== */
+.prod-card {
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+.prod-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(228, 34, 46, 0.45) !important;
+}
+/* tema claro: fundo branco com sombra suave (estilo premium) */
+[data-theme="light"] .prod-card {
+  box-shadow: 0 4px 18px rgba(20, 22, 30, 0.08);
+  border-color: transparent !important;
+}
+[data-theme="light"] .prod-card:hover {
+  box-shadow: 0 10px 28px rgba(20, 22, 30, 0.13);
+  border-color: rgba(228, 34, 46, 0.35) !important;
+}
+
+/* ===== Cards de categoria (sempre escuros, nos dois temas) ===== */
+.cat-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  padding: 18px;
+  background: linear-gradient(155deg, #1E1F25 0%, #141518 100%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  text-decoration: none;
+  display: block;
+  transition: transform .18s ease, border-color .18s ease;
+}
+.cat-card:hover { transform: translateY(-3px); border-color: rgba(228, 34, 46, 0.55); }
+.cat-glow {
+  position: absolute; top: -30px; right: -30px; width: 120px; height: 120px;
+  background: radial-gradient(circle at top right, rgba(228, 34, 46, 0.22), transparent 70%);
+  pointer-events: none; opacity: .55; transition: opacity .18s ease;
+}
+.cat-card:hover .cat-glow { opacity: 1; }
+.cat-chip {
+  width: 42px; height: 42px; border-radius: 12px;
+  background: rgba(228, 34, 46, 0.10); border: 1px solid rgba(228, 34, 46, 0.25);
+  display: flex; align-items: center; justify-content: center; color: #F26A6A;
+  transition: background .18s ease, color .18s ease;
+}
+.cat-card:hover .cat-chip { background: rgba(228, 34, 46, 0.9); color: #fff; }
+.cat-card .cat-nome { color: #F5F5F7; }
+.cat-card .cat-count { color: #8A8A93; }
+.cat-arrow {
+  position: absolute; bottom: 16px; right: 16px; color: #4A4A52;
+  transition: color .18s ease, transform .18s ease;
+}
+.cat-card:hover .cat-arrow { color: #E4222E; transform: translate(2px, -2px); }
+
+/* ===== Menu do header (header é sempre escuro) ===== */
+.nav-link {
+  color: #C9C9D1; font-size: 14px; font-weight: 500; text-decoration: none;
+  padding: 8px 2px; transition: color .15s ease;
+}
+.nav-link:hover, .nav-link.ativo { color: #fff; }
+.nav-link.ativo { border-bottom: 2px solid #E4222E; }
+
+.nav-desktop { display: none; }
+.nav-burger { display: flex; }
+@media (min-width: 768px) {
+  .nav-desktop { display: flex; }
+  .nav-burger { display: none; }
+}
+
+.theme-toggle {
+  background: transparent; border: 1px solid #2A2B30; border-radius: 9px;
+  width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; color: #C9C9D1; flex-shrink: 0; transition: color .15s ease, border-color .15s ease;
+}
+.theme-toggle:hover { color: #fff; border-color: #3A3B40; }
