@@ -2,7 +2,8 @@ import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import Container from './Container'
 import TopBar from './TopBar'
-import logo from '../assets/logo.png'
+import logoDark from '../assets/logo.png'
+import logoLight from '../assets/logo-light.png'
 import { getTheme, setTheme } from '../lib/themeMode'
 
 const ITENS = [
@@ -34,7 +35,7 @@ export default function Header() {
       <header style={{ borderBottom: '1px solid var(--header-border)', background: 'var(--header-bg)', position: 'relative', zIndex: 40, transition: 'background .2s ease, border-color .2s ease' }}>
         <Container style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, height: 'clamp(78px, 9vw, 104px)', padding: '0 clamp(22px, 5vw, 48px)' }}>
           <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
-            <img className="header-logo" src={logo} alt="Vieira Pneus — Recapadora e Acessórios" />
+            <img className="header-logo" src={tema === 'light' ? logoLight : logoDark} alt="Vieira Pneus — Recapadora e Acessórios" />
           </Link>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>

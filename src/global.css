@@ -123,6 +123,23 @@ a { color: inherit; }
 }
 .cat-card:hover .cat-arrow { color: #E4222E; transform: translate(2px, -2px); }
 
+/* ---- Cards de categoria no TEMA CLARO: branco com sombra, vermelho mantido ---- */
+[data-theme="light"] .cat-card {
+  background: linear-gradient(155deg, #FFFFFF 0%, #F6F7F9 100%);
+  border: 1px solid #ECEEF1;
+  box-shadow: 0 4px 16px rgba(20, 22, 30, 0.06);
+}
+[data-theme="light"] .cat-card:hover {
+  border-color: rgba(228, 34, 46, 0.40);
+  box-shadow: 0 12px 28px rgba(20, 22, 30, 0.13);
+}
+[data-theme="light"] .cat-glow { opacity: .40; }
+[data-theme="light"] .cat-card:hover .cat-glow { opacity: .7; }
+[data-theme="light"] .cat-card .cat-nome { color: #17181B; }
+[data-theme="light"] .cat-card .cat-count { color: #8A8C94; }
+[data-theme="light"] .cat-chip { color: #E4222E; }
+[data-theme="light"] .cat-arrow { color: #B9BBC2; }
+
 /* ===== Menu do header (acompanha o tema) ===== */
 .header-logo { height: 60px; width: auto; display: block; }
 @media (min-width: 768px) { .header-logo { height: 82px; } }
