@@ -3,6 +3,7 @@ import Home from './pages/Home'
 import Catalogo from './pages/Catalogo'
 import Produto from './pages/Produto'
 import Servicos from './pages/Servicos'
+import Sobre from './pages/Sobre'
 import Loja from './pages/Loja'
 import Login from './admin/Login'
 import AdminGuard from './admin/AdminGuard'
@@ -18,6 +19,7 @@ export default function App() {
       <Route path="/catalogo" element={<Catalogo />} />
       <Route path="/produto/:id" element={<Produto />} />
       <Route path="/servicos" element={<Servicos />} />
+      <Route path="/sobre" element={<Sobre />} />
       <Route path="/loja" element={<Loja />} />
 
       {/* Admin */}
