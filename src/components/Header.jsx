@@ -10,6 +10,7 @@ const ITENS = [
   { to: '/', label: 'Home' },
   { to: '/catalogo', label: 'Produtos' },
   { to: '/servicos', label: 'Serviços' },
+  { to: '/sobre', label: 'Sobre Nós' },
   { to: '/loja', label: 'Contato' },
 ]
 
