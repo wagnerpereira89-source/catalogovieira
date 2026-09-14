@@ -4,17 +4,21 @@ import WhatsAppButton from '../components/WhatsAppButton'
 import Header from '../components/Header'
 import Container from '../components/Container'
 import lojaFoto from '../assets/loja-vieira.jpg'
+import fotoRobson from '../assets/robson.jpg'
+import fotoAlessandra from '../assets/alessandra.jpg'
 
 // Sócios da empresa
 const SOCIOS = [
   {
     nome: 'Robson Daniel Vieira',
     cargo: 'Sócio-fundador',
+    foto: fotoRobson,
     bio: 'Mais de 15 anos de experiência no ramo de pneus. Seu conhecimento técnico e prático do setor foi fundamental para o crescimento da Vieira Pneus e para a construção de relações duradouras com clientes e parceiros.',
   },
   {
     nome: 'Alessandra Alexi Vieira',
     cargo: 'Sócia e gestora financeira',
+    foto: fotoAlessandra,
     bio: 'Depois de quase 10 anos no setor bancário, passou a integrar a gestão da Vieira Pneus, trazendo sua experiência nas áreas financeira, comercial e de relacionamento para fortalecer os processos, o planejamento e a expansão do negócio.',
   },
 ]
@@ -76,15 +80,22 @@ export default function Sobre() {
           {SOCIOS.map((s) => (
             <div
               key={s.nome}
-              style={{ background: theme.card, border: `1px solid ${theme.cardBorder}`, borderRadius: 12, padding: '20px 18px' }}
+              style={{ background: theme.card, border: `1px solid ${theme.cardBorder}`, borderRadius: 14, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
             >
-              <div style={{ color: theme.textPrimary, fontSize: 16.5, fontWeight: 700 }}>{s.nome}</div>
-              <div style={{ display: 'inline-block', color: theme.red, fontSize: 12.5, fontWeight: 600, marginTop: 6, padding: '3px 10px', background: theme.chip, border: `1px solid ${theme.chipBorder}`, borderRadius: 999 }}>
-                {s.cargo}
+              <img
+                src={s.foto}
+                alt={s.nome}
+                style={{ display: 'block', width: '100%', height: 'auto', background: '#0A0A0C' }}
+              />
+              <div style={{ padding: '18px 20px 22px' }}>
+                <div style={{ color: theme.textPrimary, fontSize: 17, fontWeight: 700, lineHeight: 1.25 }}>{s.nome}</div>
+                <div style={{ display: 'inline-block', color: theme.red, fontSize: 12.5, fontWeight: 600, marginTop: 8, padding: '3px 10px', background: theme.chip, border: `1px solid ${theme.chipBorder}`, borderRadius: 999 }}>
+                  {s.cargo}
+                </div>
+                <p style={{ color: theme.textSecondary, fontSize: 14, lineHeight: 1.6, marginTop: 14 }}>
+                  {s.bio}
+                </p>
               </div>
-              <p style={{ color: theme.textSecondary, fontSize: 14, lineHeight: 1.6, marginTop: 12 }}>
-                {s.bio}
-              </p>
             </div>
           ))}
         </div>
